@@ -54,7 +54,7 @@ fn test_outpoint_destructuring() {
 #[test]
 fn test_script_slice() {
     let mut script = vec![0x00, 0x14];
-    script.extend(vec![0u8; 20]);
+    script.extend_from_slice(&vec![0u8; 20]);
     let data = read_pushdata(&script);
     assert_eq!(data.len(), 20);
 }
